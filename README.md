@@ -1,7 +1,5 @@
 # iLogicSnippets
 
-# InventorShims
-
 ## About
 
 This is an unofficial collection of iLogic/Visual Basic snippets and rules for Autodesk Inventor.
