@@ -11,7 +11,7 @@ This repo is simple a collection of code.  You can browse the directory structur
 * Snippets - portions of code with a specific task, such as turning off/on user screen interaction.
 * Drawing File rules
 * Assembly File rules
-* File Management fules
+* File Management rules
 * Sketch rules
 
 ## Languages
