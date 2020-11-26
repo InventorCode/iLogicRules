@@ -91,9 +91,6 @@ Try
 	oTransaction.End
 	
 Catch ex As Exception
-	'Return the positional representation to what it was before running this script
-	activePosRep.Activate
-	
 	oTransaction.Abort
 	
 	'Re-select all components that were selected before running this script
