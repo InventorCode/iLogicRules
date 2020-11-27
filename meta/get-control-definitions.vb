@@ -4,7 +4,7 @@
 
 Private Sub Main
 	Dim outputFolder As String = System.IO.Path.GetTempPath()
-	Dim outputFilename As String = "Inventor " & ThisApplication.SoftwareVersion.DisplayVersion & " - ControlDefinitions.txt"
+	Dim outputFilename As String = "control-definitions-" & ThisApplication.SoftwareVersion.DisplayVersion & ".txt"
 	Const delimiter As String = "|"
 	Dim IncludeMacros As Boolean = True 'Macros are public VBA subs.
 	
