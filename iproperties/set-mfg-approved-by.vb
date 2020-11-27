@@ -35,7 +35,7 @@ Private Class RuleMain
 			Exit Sub
 		End If
 		
-		If System.IO.File.GetAttributes(_doc.FullFileName) And System.IO.FileAttributes.ReadOnly Then
+		If _doc.FileSaveCounter > 0 AndAlso (System.IO.File.GetAttributes(_doc.FullFileName) And System.IO.FileAttributes.ReadOnly) Then
 			Logger.Error("iProps can't be updated because file is read-only")
 			Exit Sub
 		End If
