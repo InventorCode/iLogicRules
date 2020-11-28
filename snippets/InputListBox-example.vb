@@ -8,11 +8,11 @@
 Dim listItems() As String = New String() {"1/2 in", "1/4 in", "1/8 in", "1/16 in", "1/32 in"}
 
 Dim result As String = InputListBox(
-    Prompt := "Pick a value.", _
+    Prompt := "Pick a value.",
     ListItems := listItems, 
     DefaultValue := listItems(0), 
     Title := "InputListBox Example",
-    ListName := "Here are your options:", _
+    ListName := "Here are your options:",
 	Width := 200 'I changed this from its default so the title wouldn't get cut off
 )
 
