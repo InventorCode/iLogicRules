@@ -92,9 +92,10 @@ Private Function AddCircularPatternFeature(
 	Dim oTransaction As Transaction
 	
 	Try
-		oTransaction = app.TransactionManager.StartTransaction(doc, "Create Circular Pattern Feature")
-			
 		oFeature = circFeatures.AddByDefinition(patternDef)
+		
+		'This will get merged into the "Create Circular Pattern Feature" transaction.
+		oTransaction = app.TransactionManager.StartTransaction(doc, "Temp") 
 		
 		'CircularPatternFeatures.AddByDefinition in Inventor's API has a bug that causes the angle value (in radians) to be the same as the count value.
 		'To work around this bug, the angle parameter has to be modified after the feature has been created.
@@ -104,7 +105,8 @@ Private Function AddCircularPatternFeature(
 		If Name <> "" Then oFeature.Name = Name
 	
 		oTransaction.End
-			
+		oTransaction.MergeWithPrevious = True
+		
 	Catch ex As Exception
 		oTransaction.Abort
 		Throw
