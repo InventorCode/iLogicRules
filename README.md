@@ -6,7 +6,7 @@ This is an unofficial collection of iLogic/Visual Basic snippets and rules for A
 
 ## How to Use
 
-This repo is simple a collection of code.  You can browse the directory structure for files that look useful to you.  The organizational file structure will undoubtably evolve, but the current organization of this repo is organized by folder.  Each folder should reflect a specific area of interest within Inventor.  Examples include:
+This repo is a simple collection of code.  You can browse the directory structure for files that look useful to you.  The organizational file structure will undoubtably evolve, but the current organization of this repo is organized by folder.  Each folder should reflect a specific area of interest within Inventor.  Examples include:
 
 * Snippets - portions of code with a specific task, such as turning off/on user screen interaction.
 * Drawing File rules
