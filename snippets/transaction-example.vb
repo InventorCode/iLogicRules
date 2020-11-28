@@ -11,7 +11,8 @@ Dim doc As Document = ThisDoc.Document
 
 Dim oTransaction As Transaction
 Try
-	'AFTER STARTING THE TRANSACTION, IT MUST BE ENDED OR ABORTED BEFORE THE END OF THE SCRIPT, OR ELSE INVENTOR CAN CRASH
+	'AFTER STARTING THE TRANSACTION, IT MUST BE ENDED OR ABORTED BEFORE
+	'THE SCRIPT THROWS AN UNHANDLED EXCEPTION OR ENDS.  OTHERWISE, INVENTOR CAN CRASH.
 	oTransaction = app.TransactionManager.StartTransaction(doc, transactionName)
 	
 	'Code Here... Any modifications to the document will show up as a single entry in the undo stack.
