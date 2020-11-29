@@ -33,5 +33,7 @@ Select Case oDoc.DocumentType
 		ThisApplication.UserInterfaceManager.DockableWindows("ilogic.logwindow").Visible = True
 		
 		MessageBox.Show(message, iLogicVb.RuleName)
+		
+		Exit Sub
 	
 End Select
