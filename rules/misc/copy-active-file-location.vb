@@ -1,11 +1,10 @@
 ﻿'Author: nannerdw
-'Last Modified Date:  27 Nov, 2020
-'Description: Copies the active document's file location to the clipboard
+'Description: Copies the active edit document's file location to the clipboard
 
-Dim doc As Document = ThisApplication.ActiveDocument
+Dim doc As Document = ThisApplication.ActiveEditDocument
 
 If doc.FileSaveCounter = 0 Then
-	MessageBox.Show("The active document must be saved first.")
+	MessageBox.Show("The active edit document must be saved first.")
 Else
 	My.Computer.Clipboard.SetText(System.IO.Path.GetDirectoryName(doc.FullFileName))
 End If
