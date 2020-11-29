@@ -3,6 +3,8 @@
 '#####################
 '###   Auto-View   ###
 '#####################
+'Source: https://github.com/InventorCode/iLogicRules
+'
 ' v1.5
 '
 'This script lets you auto-label drawing views with the built-in view labels.  It will pull

@@ -1,7 +1,8 @@
 ﻿'-------------------------------------------------------------------------------------------------------------------------------------
+'Source: https://github.com/InventorCode/iLogicRules
 'Author: nannerdw
-'Last Modified Date: 25 Nov, 2020
 'Description:  This script prompts the user to select a component from the active assembly to replace one or more selected components.
+'Tested in Inventor 2020.3
 '-------------------------------------------------------------------------------------------------------------------------------------
 Option Explicit On
 

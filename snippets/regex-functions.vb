@@ -1,4 +1,6 @@
-﻿'test for:
+﻿'Source: https://github.com/InventorCode/iLogicRules
+
+'test for:
 '
 'Sheet number like 100-(500)A: "\-(\d{3})"
 'Task number ion drawing sheet, like (100)-500A: "^(\d{3})\-.{4}"

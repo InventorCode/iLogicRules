@@ -3,6 +3,8 @@
 'Author: nannerdw
 'Description: Toggles the visibility of origin points, axes, and planes for selected components.
 '
+'Tested in Inventor 2020.3
+'
 'If one or more of a component's workfeatures are already visible, then all will be toggled off.
 '
 'While editing in-place from an assembly, components outside of the active edit document can also be selected.

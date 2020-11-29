@@ -1,11 +1,8 @@
-﻿'Author: nannerdw
-'
-'Last Modified Date: 27 Nov, 2020
-'
+﻿'Source: https://github.com/InventorCode/iLogicRules
+'Author: nannerdw
 'Description: Fills out the "Eng. Approved By" and "Eng. Approved Date" iProperties,
-'	and displays the results in the iLogic log window
-'
-'Note: User name can be set in Application Options - General
+'and displays the results in the iLogic log window.
+'User name can be set in Application Options - General
 '
 'Optional RuleArguments:
 '	doc As Document: The document whose iProps will be changed.

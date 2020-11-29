@@ -1,3 +1,5 @@
+'Source: https://github.com/InventorCode/iLogicRules
+
 Public Sub PrintRibbon()
     Open "C:\RibbonNames.txt" For Output As #1
 

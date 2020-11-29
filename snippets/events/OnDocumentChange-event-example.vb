@@ -1,3 +1,5 @@
+'Source: https://github.com/InventorCode/iLogicRules
+
 inventor = System.Runtime.InteropServices.Marshal.GetActiveObject("Inventor.Application")
 appEvents = Inventor.ApplicationEvents 
 AddHandler appEvents.OnDocumentChange, AddressOf partListCreateEvent

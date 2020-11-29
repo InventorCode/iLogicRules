@@ -1,3 +1,5 @@
+'Source: https://github.com/InventorCode/iLogicRules
+
 'Show Front on View Cube'
 ThisApplication.CommandManager.ControlDefinitions.Item("AppFrontViewCmd").Execute
 

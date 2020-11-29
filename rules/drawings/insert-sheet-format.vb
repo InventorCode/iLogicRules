@@ -1,4 +1,5 @@
-﻿'Title: Insert Sheet Format
+﻿'Source: https://github.com/InventorCode/iLogicRules
+'Title: Insert Sheet Format
 'Description: Insert an existing drawing sheet format to the current drawing.
 
 '!!! Change the sheetFormatName variable to match the sheet format in your drawing. !!!

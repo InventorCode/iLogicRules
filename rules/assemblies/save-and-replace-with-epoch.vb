@@ -2,6 +2,7 @@
 '###   Save And Replace With Epoch   ###
 '#######################################
 
+' Source: https://github.com/InventorCode/iLogicRules
 ' version 1.0
 ' Matthew D. Jordan -(C) 2020
 ' MIT License
