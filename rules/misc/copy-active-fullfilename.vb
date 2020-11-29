@@ -1,8 +1,7 @@
 ﻿'Author: nannerdw
-'Last Modified Date:  27 Nov, 2020
-'Description: Copies the active document's fullFileName to the clipboard
+'Description: Copies the active edit document's fullFileName to the clipboard
 
-Dim doc As Document = ThisApplication.ActiveDocument
+Dim doc As Document = ThisApplication.ActiveEditDocument
 
 If doc.FileSaveCounter = 0 Then
 	MessageBox.Show("The active document must be saved first.")
