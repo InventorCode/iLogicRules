@@ -3,6 +3,7 @@
 '###################################################
 'Matthew D. Jordan
 'MIT License
+'Source: https://github.com/InventorCode/iLogicRules
 
 'Based on:
 'http://help.autodesk.com/view/INVNTOR/2019/ENU/?caas=caas/discussion/t5/Inventor-Forum/Resolving-Links-to-CC-Components-in-Sub-Asm/td-p/8231970.html

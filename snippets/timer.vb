@@ -1,3 +1,5 @@
+'Source: https://github.com/InventorCode/iLogicRules
+
         Dim timer As New Timer("Testing")
         timer.StartTimer()
 

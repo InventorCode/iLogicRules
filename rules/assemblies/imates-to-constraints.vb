@@ -1,6 +1,6 @@
 ﻿'--------------------------------
+'Source: https://github.com/InventorCode/iLogicRules
 'Author: nannerdw
-'Last Modified Date: 5 Nov, 2019
 'Description: Converts selected iMate results to ordinary constraints so that the iMates can be reused
 'Note: If the selected constraint is part of a composite iMate, the other iMates in the composite will also be converted into ordinary constraints.
 'Tested in Inventor 2020.3

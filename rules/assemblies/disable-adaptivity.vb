@@ -1,7 +1,8 @@
 '#############################
 '###   Disable Adaptivity  ###
 '#############################
-
+' Source: https://github.com/InventorCode/iLogicRules
+'
 ' Removes all adaptivity for components in this assembly.
 ' This is a sledgehammer, use wisely.
 

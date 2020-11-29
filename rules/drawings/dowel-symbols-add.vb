@@ -6,6 +6,8 @@ Imports Inventor.ObjectTypeEnum
 '#############################
 '###   Add Dowel Symbols   ###
 '#############################
+' Source: https://github.com/InventorCode/iLogicRules
+'
 ' v1.0
 '
 'Summary:

@@ -1,3 +1,5 @@
+'Source: https://github.com/InventorCode/iLogicRules
+
 '[TODO: rewrite to be generic for any input object]
 
 Function GetViewPath(ByRef oView As DrawingView)

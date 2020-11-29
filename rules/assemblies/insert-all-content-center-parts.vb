@@ -1,3 +1,5 @@
+'Source: https://github.com/InventorCode/iLogicRules
+
 Sub Main()
     PlaceFromContentCenter()
 

@@ -1,6 +1,7 @@
 ﻿'####################################################
 '###   Get Component Document From Drawing View   ###
 '####################################################
+'Source: https://github.com/InventorCode/iLogicRules
 'v1.0
 '
 'Tested in Inventor 2020.3.3

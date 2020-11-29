@@ -1,5 +1,5 @@
-﻿'Author: nannerdw
-'Last Modified Date: 26 Nov, 2020
+﻿'Source: https://github.com/InventorCode/iLogicRules
+'Author: nannerdw
 'Summary: Outputs all control definitions to a text file in the %Temp% folder
 
 Private Sub Main

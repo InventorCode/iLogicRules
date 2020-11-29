@@ -1,3 +1,5 @@
+'Source: https://github.com/InventorCode/iLogicRules
+
 'Test for library paths:
 Function IsLibraryPath()
 

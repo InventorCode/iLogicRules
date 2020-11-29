@@ -3,13 +3,12 @@
 ' ######################################
 ' ###   List Unresolved Components   ###
 ' ######################################
-'
+' Source: https://github.com/InventorCode/iLogicRules
 ' v1.0 - MDJ
 '
 ' This routine will go through an assembly and summarize the unresolved files.
 ' They are saved to an excel file with the same name as the assembly + "Unresolved".
 ' The excel file will open after the routine is finished.
-
 
 Sub Main()
 
