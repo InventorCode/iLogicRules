@@ -2,20 +2,13 @@
 'Author: nannerdw
 'Title: Unload VBA Project
 'Description: Unloads all instances of a VBA project file
-'The RuleArgument "filename" must be passed to this rule from another script.  See the beginning of this script for an example.
+'
+'The RuleArgument "filename" must be passed to this rule from another script.
 'The file path can be absolute, or relative to the "Default VBA project" directory that is set in Application Options - File.
 'The filename's .ivb file extension is optional.
+'See load-vba-project-example.vb for an example of how to call this rule.
 
 Option Explicit On
-
-#Region "Example Calling Rule"
-'Copy this code to another iLogic rule, and uncomment it.
-'It unloads a file named TestProject.ivb located in the "Default VBA project" folder.
-
-'Dim map As Inventor.NameValueMap = ThisApplication.TransientObjects.CreateNameValueMap()
-'map.Add("filename", "TestProject")
-'iLogicVb.RunExternalRule("unload-vba-project", map)
-#End Region
 
 Private Sub Main
 	ThisApplication.UserInterfaceManager.DockableWindows("ilogic.logwindow").Visible = True
