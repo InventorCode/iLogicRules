@@ -52,16 +52,17 @@ Private Sub Main
 	End If
 	
 	'If a project with the same fullFileName is already loaded, do not open it again
-	If GetLoadedVBAProjectByFileName(filename) IsNot Nothing Then
+	Dim numLoadedProjInstances As Integer = GetLoadedVBAProjInstancesByFilename(filename).Count
+	If numLoadedProjInstances > 0 Then
 		Logger.Info("Project already loaded" & vbCrLf)
 		Exit Sub
 	End If
-		
+	
 	Try
 		ThisApplication.VBAProjects.Open(filename)
 		Logger.Info("Project loaded successfully" & vbCrLf)
 	Catch ex As Exception
-		If GetLoadedVBAProjectByFileName(filename) Is Nothing Then
+		If GetLoadedVBAProjInstancesByFilename(filename).Count = numLoadedProjInstances Then
 			Logger.Fatal("Project could not be loaded" & vbCrLf)
 			Exit Sub
 		End If
@@ -69,14 +70,21 @@ Private Sub Main
 	End Try
 End Sub
 
-Private Function GetLoadedVBAProjectByFileName(fileName As String) As InventorVBAProject
+Private Function GetLoadedVBAProjInstancesByFilename(fileName As String) As List(Of InventorVBAProject)
+'More than one instance of a VBA project can be open at once
 	Dim formatPath = Function(x As String) Replace(LCase(GetUNCPath(x)),"/","\")
+	
+	Dim projInstances As New List(Of InventorVBAProject)
 	
 	For Each proj As InventorVBAProject In ThisApplication.VBAProjects
 		If proj.ProjectType <> kUserVBAProject Then Continue For
-		If formatPath(proj.VBProject.FileName) = formatPath(fileName) Then Return proj
+		If formatPath(proj.VBProject.FileName) = formatPath(fileName) Then
+			projInstances.Add(proj)
+		End If
 	Next
-End Function
+	
+	Return projInstances
+End  Function
 
 Private Function GetUNCPath(strPath) As String
 	Dim fso As Object = CreateObject("Scripting.FileSystemObject")
