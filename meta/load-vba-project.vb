@@ -78,9 +78,7 @@ Private Function GetLoadedVBAProjInstancesByFilename(fileName As String) As List
 	
 	For Each proj As InventorVBAProject In ThisApplication.VBAProjects
 		If proj.ProjectType <> kUserVBAProject Then Continue For
-		If formatPath(proj.VBProject.FileName) = formatPath(fileName) Then
-			projInstances.Add(proj)
-		End If
+		If formatPath(proj.VBProject.FileName) = formatPath(fileName) Then projInstances.Add(proj)
 	Next
 	
 	Return projInstances
