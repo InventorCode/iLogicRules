@@ -18,12 +18,13 @@ Option Explicit On
 #End Region
 
 Private Sub Main
+	ThisApplication.UserInterfaceManager.DockableWindows("ilogic.logwindow").Visible = True
+	
 	Logger.Info("Rule Started: " & iLogicVb.RuleName)
 	
 	Dim filename As String = RuleArguments("filename")
 	If filename = "" Then
 		Logger.Fatal("A filename was not passed to this rule" & vbCrLf)
-		LogWindow_Show
 		Exit Sub
 	End If
 	
@@ -35,7 +36,6 @@ Private Sub Main
 	If System.IO.Path.IsPathRooted(filename) Then
 		If Not System.IO.File.Exists(filename) Then
 			Logger.Fatal("File not found" & vbCrLf)
-			LogWindow_Show
 			Exit Sub
 		End If
 	Else 'Path is relative
@@ -47,7 +47,6 @@ Private Sub Main
 			Logger.Info("File found in " & defaultVBAProjFolder)
 		Else
 			Logger.Fatal("File not found in " & defaultVBAProjFolder & vbCrLf)
-			LogWindow_Show
 			Exit Sub
 		End If
 	End If
@@ -55,7 +54,6 @@ Private Sub Main
 	'If a project with the same fullFileName is already loaded, do not open it again
 	If GetLoadedVBAProjectByFileName(filename) IsNot Nothing Then
 		Logger.Info("Project already loaded" & vbCrLf)
-		LogWindow_Show
 		Exit Sub
 	End If
 		
@@ -65,7 +63,6 @@ Private Sub Main
 	Catch ex As Exception
 		If GetLoadedVBAProjectByFileName(filename) Is Nothing Then
 			Logger.Fatal("Project could not be loaded" & vbCrLf)
-			LogWindow_Show
 			Exit Sub
 		End If
 		Throw
@@ -93,7 +90,3 @@ Private Function GetUNCPath(strPath) As String
 		Return strPath
 	End Try
 End Function
-
-Private Sub LogWindow_Show()
-	ThisApplication.UserInterfaceManager.DockableWindows("ilogic.logwindow").Visible = True
-End Sub
