@@ -1,8 +1,10 @@
 ﻿Option Explicit On
+
+'Source: https://github.com/InventorCode/iLogicRules
+'Title: Copy Selected FullFileNames
 'Author: nannerdw
-'Last Modified Date:  27 Nov, 2020
 'Description:
-'	Copies the fullFileNames or 1 or more selected component occurrences to the clipboard, 
+'	Copies the fullFileNames of 1 or more selected component occurrences to the clipboard, 
 '	sorted alphabetically, each separated by a newline
 
 Const delimiter As String = vbCrLf
