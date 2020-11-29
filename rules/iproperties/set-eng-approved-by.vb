@@ -2,7 +2,7 @@
 '
 'Last Modified Date: 27 Nov, 2020
 '
-'Description: Fills out the "Mfg. Approved By" and "Mfg. Approved Date" iProperties,
+'Description: Fills out the "Eng. Approved By" and "Eng. Approved Date" iProperties,
 '	and displays the results in the iLogic log window
 '
 'Note: User name can be set in Application Options - General
@@ -40,8 +40,8 @@ Private Class RuleMain
 			Exit Sub
 		End If
 		
-		Me.UpdateProp("Mfg Approved By", ThisApplication.UserName)
-		Me.UpdateProp("Mfg Date Approved", DateTime.Today())
+		Me.UpdateProp("Engr Approved By", ThisApplication.UserName)
+		Me.UpdateProp("Engr Date Approved", DateTime.Today())
 		
 		ThisApplication.UserInterfaceManager.DockableWindows("ilogic.logwindow").Visible = True
 	End Sub
