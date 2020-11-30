@@ -27,10 +27,10 @@ Private Function GetSelectedByType(objTypes As IEnumerable (Of ObjectTypeEnum)) 
 		).ToList
 End Function
 
-Private Function GetSelectedByType(objTypes As ObjectTypeEnum) As List(Of Object)
+Private Function GetSelectedByType(objType As ObjectTypeEnum) As List(Of Object)
 'Returns a list of pre-selected objects matching the input type
 	Return (
 		From x In ThisApplication.ActiveDocument.SelectSet
-		Where objTypes = x.Type
+		Where objType = x.Type
 		).ToList
 End Function
