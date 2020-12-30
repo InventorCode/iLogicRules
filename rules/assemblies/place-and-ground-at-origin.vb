@@ -35,6 +35,8 @@ Dim SilentOperation_Backup As Boolean = app.SilentOperation
 
 Dim activePosRep_Backup As PositionalRepresentation = repMgr.ActivePositionalRepresentation
 
+Dim UserInteractionDisabled_Backup As Boolean = uiMgr.UserInteractionDisabled
+
 Dim oTransaction As Transaction = Nothing
 
 Try
@@ -64,7 +66,7 @@ Try
 		
 		activePosRep_Backup.Activate
 	
-		uiMgr.UserInteractionDisabled = False
+		uiMgr.UserInteractionDisabled = UserInteractionDisabled_Backup
 	End If
 	
 	app.SilentOperation = SilentOperation_Backup
@@ -76,7 +78,7 @@ Catch ex As Exception
 	
 	app.SilentOperation = SilentOperation_Backup
 	
-	uiMgr.UserInteractionDisabled = False
+	uiMgr.UserInteractionDisabled = UserInteractionDisabled_Backup
 	
 	If oTransaction IsNot Nothing Then oTransaction.Abort
 	
