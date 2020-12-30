@@ -35,45 +35,50 @@ Dim SilentOperation_Backup As Boolean = app.SilentOperation
 
 Dim activePosRep_Backup As PositionalRepresentation = repMgr.ActivePositionalRepresentation
 
-Dim oTransaction As Transaction
+Dim oTransaction As Transaction = Nothing
 
 Try
-	app.SilentOperation = False
-	
-	If activePosRep_Backup.Name <> "Master" Then repMgr.PositionalRepresentations("Master").Activate
+	'SilentOperation = False is needed in case Inventor tries to display this prompt:
+	'"The location of the selected file is not in the search path of the active project file."
+	'Otherwise, the user wouldn't be able to select the file for placement.
+	app.SilentOperation = False 
 
 	oFileDialog.ShowOpen
 
-	If oFileDialog.FileName = "" Then Exit Sub 'No components were selected
+	If oFileDialog.FileName <> "" Then
+		
+		'The Master positional representation must be active for components to be placed into the assembly.
+		If activePosRep_Backup.Name <> "Master" Then repMgr.PositionalRepresentations("Master").Activate
+		
+		Dim arrFileNames() As String = Split(oFileDialog.FileName, "|")
+		If arrFileNames.Length > 1 Then transactionName = transactionName & "s"
 
-	Dim arrFileNames() As String = Split(oFileDialog.FileName, "|")
-	If arrFileNames.Length > 1 Then transactionName = transactionName & "s"
-
-	oTransaction = app.TransactionManager.StartTransaction(doc, transactionName)
+		oTransaction = app.TransactionManager.StartGlobalTransaction(doc, transactionName)
+		
+		uiMgr.UserInteractionDisabled = True
+		
+		For Each fileName As String In arrFileNames
+			Dim occ As ComponentOccurrence = doc.ComponentDefinition.Occurrences.Add(fileName, app.TransientGeometry.CreateMatrix)
+			occ.Grounded = True
+		Next fileName
+		
+		activePosRep_Backup.Activate
 	
-	uiMgr.UserInteractionDisabled = True
-	
-	For Each fileName As String In arrFileNames
-		Dim occ As ComponentOccurrence = doc.ComponentDefinition.Occurrences.Add(fileName, app.TransientGeometry.CreateMatrix)
-		occ.Grounded = True
-	Next fileName
-	
-	uiMgr.UserInteractionDisabled = False
+		uiMgr.UserInteractionDisabled = False
+	End If
 	
 	app.SilentOperation = SilentOperation_Backup
 	
-	activePosRep_Backup.Activate
-	
-	oTransaction.End
+	If oTransaction IsNot Nothing Then oTransaction.End
 	
 Catch ex As Exception
-	uiMgr.UserInteractionDisabled = False
+	activePosRep_Backup.Activate
 	
 	app.SilentOperation = SilentOperation_Backup
 	
-	activePosRep_Backup.Activate
+	uiMgr.UserInteractionDisabled = False
 	
-	oTransaction.Abort
+	If oTransaction IsNot Nothing Then oTransaction.Abort
 	
 	Throw
 End Try
