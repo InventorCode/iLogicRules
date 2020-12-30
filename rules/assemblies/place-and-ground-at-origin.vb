@@ -46,16 +46,16 @@ Try
 	oFileDialog.ShowOpen
 
 	If oFileDialog.FileName <> "" Then
-		
-		'The Master positional representation must be active for components to be placed into the assembly.
-		If activePosRep_Backup.Name <> "Master" Then repMgr.PositionalRepresentations("Master").Activate
-		
+
 		Dim arrFileNames() As String = Split(oFileDialog.FileName, "|")
 		If arrFileNames.Length > 1 Then transactionName = transactionName & "s"
 
 		oTransaction = app.TransactionManager.StartGlobalTransaction(doc, transactionName)
 		
 		uiMgr.UserInteractionDisabled = True
+		
+		'The Master positional representation must be active for components to be placed into the assembly.
+		If activePosRep_Backup.Name <> "Master" Then repMgr.PositionalRepresentations("Master").Activate
 		
 		For Each fileName As String In arrFileNames
 			Dim occ As ComponentOccurrence = doc.ComponentDefinition.Occurrences.Add(fileName, app.TransientGeometry.CreateMatrix)
