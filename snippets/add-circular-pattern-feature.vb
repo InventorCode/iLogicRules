@@ -77,12 +77,6 @@ Private Function AddCircularPatternFeature(
 	Optional FitWithinAngle As Boolean = True,
 	Optional Name As String = ""
 	) As CircularPatternFeature
-'ParentFeatures can be one of the following:
-'	A single object
-'	An object that implements IEnumerable(Of Object)
-'	An ObjectCollection
-'Count can be an Integer or a parameter expression string
-'Angle can be a Double (in radians), or a parameter expression string
 
 	Dim objColl As ObjectCollection
 	
