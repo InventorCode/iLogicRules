@@ -9,7 +9,7 @@
 ''' 
 ''' <returns>Full file path, or an empty string if nothing was found.</returns>
 ''' 
-Private Function FindFirstFile(Filename As String, RootFolder As String, Optional Recurse As Boolean = True) As String
+Function FindFirstFile(Filename As String, RootFolder As String, Optional Recurse As Boolean = True) As String
 	Dim files As String() = System.IO.Directory.GetFiles(
 		path :=RootFolder, 
 		searchPattern :=Filename, 
