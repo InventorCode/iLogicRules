@@ -73,7 +73,7 @@ Private Function AddCircularPatternFeature(
 	AxisEntity As Object, 
 	NaturalAxisDirection As Boolean, 
 	Count As Object, 
-	Angle As Object, ''' <param name="Angle">Can be a Double (in radians), or a parameter expression strin.g</param>
+	Angle As Object,
 	Optional FitWithinAngle As Boolean = True,
 	Optional Name As String = ""
 	) As CircularPatternFeature
