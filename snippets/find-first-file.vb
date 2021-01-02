@@ -7,9 +7,13 @@
 ''' 
 ''' <param name="Recurse">Search all subfolders</param>
 ''' 
+''' <remarks>
+''' Source: <seealso href="https://github.com/InventorCode/iLogicRules"/>
+''' </remarks>
+''' 
 ''' <returns>Full file path, or an empty string if nothing was found.</returns>
 ''' 
-Function FindFirstFile(Filename As String, RootFolder As String, Optional Recurse As Boolean = True) As String
+Private Function FindFirstFile(Filename As String, RootFolder As String, Optional Recurse As Boolean = True) As String
 	Dim files As String() = System.IO.Directory.GetFiles(
 		path :=RootFolder, 
 		searchPattern :=Filename, 
