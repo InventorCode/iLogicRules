@@ -1,21 +1,17 @@
-﻿'####################################################
-'###   Get Component Document From Drawing View   ###
-'####################################################
-'Source: https://github.com/InventorCode/iLogicRules
-'v1.0
-'
-'Tested in Inventor 2020.3.3
-'
+﻿'Source: https://github.com/InventorCode/iLogicRules
+'Title: Get Component Document From Drawing View
+'Author: nannerdw
 'Summary:
 'The GetViewComponentDoc function returns the component (part or assembly) document referenced by a drawing view. 
 'If the drawing view refers to an .IPN file, the assembly document referenced by the IPN is returned instead.
+'Tested in Inventor 2020.3.3
 
 Imports Inventor.ObjectTypeEnum 'This may be required in the header of your script.  'It was not necessary in Inventor 2020.3.3
 
 '------------------------------------------------------------------
 'Sub Main is provided as an example for calling GetViewComponentDoc
 '------------------------------------------------------------------
-Sub Main
+Private Sub Main
 	Dim doc As DrawingDocument = TryCast(ThisDoc.Document, DrawingDocument)
 	If doc Is Nothing Then
 		MessageBox.Show("A drawing document is not active.")
@@ -37,7 +33,15 @@ Sub Main
 	ThisApplication.UserInterfaceManager.DockableWindows("ilogic.logwindow").Visible = True
 End Sub
 
-Function GetViewComponentDoc(oView As DrawingView) As Document
+''' <summary>
+''' Returns the component (part or assembly) document referenced by a drawing view. 
+''' </summary>
+''' 
+''' <remarks>
+''' Source: <seealso href="https://github.com/InventorCode/iLogicRules"/>
+''' </remarks>
+''' 
+Private Function GetViewComponentDoc(oView As DrawingView) As Document
 	Dim doc As Document = oView.ReferencedDocumentDescriptor.ReferencedDocument
 	Select Case doc.DocumentType
 	Case kAssemblyDocumentObject, kPartDocumentObject

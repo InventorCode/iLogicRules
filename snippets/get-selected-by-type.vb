@@ -18,7 +18,15 @@ Private Sub Main
 		text:= oPoints.Count & " 2D sketch point(s) selected" & vbCrLf & 
 				oLines.Count & " sketch lines(s) selected")
 End Sub
-		
+
+''' <summary>
+''' Returns a list of pre-selected objects matching <paramref name="objTypes"/>
+''' </summary>
+''' 
+''' <remarks>
+''' Source: <seealso href="https://github.com/InventorCode/iLogicRules"/>
+''' </remarks>
+''' 
 Private Function GetSelectedByType(objTypes As IEnumerable (Of ObjectTypeEnum)) As List(Of Object)
 'Returns a list of pre-selected objects matching one of the input types
 	Return (
@@ -27,6 +35,14 @@ Private Function GetSelectedByType(objTypes As IEnumerable (Of ObjectTypeEnum)) 
 		).ToList
 End Function
 
+''' <summary>
+''' Returns a list of pre-selected objects matching <paramref name="objType"/>
+''' </summary>
+'''
+''' <remarks>
+''' Source: <seealso href="https://github.com/InventorCode/iLogicRules"/>
+''' </remarks>
+''' 
 Private Function GetSelectedByType(objType As ObjectTypeEnum) As List(Of Object)
 'Returns a list of pre-selected objects matching the input type
 	Return (

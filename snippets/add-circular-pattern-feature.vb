@@ -46,12 +46,34 @@ Private Sub Main
 		)
 End Sub
 
+
+''' <summary>
+''' Creates a circular pattern feature in a part file.
+''' </summary>
+''' 
+''' <remarks>
+''' CircularPatternFeatures.AddByDefinition In Inventor's API has a bug that causes the Angle value (in radians) to be the same as the Count value.
+''' <see cref="AddCircularPatternFeature"/> is provided as a workaround for that bug.
+''' <br/><br/>
+''' Source: <seealso href="https://github.com/InventorCode/iLogicRules"/>
+''' </remarks>
+''' 
+''' <param name="Angle">Can be a Double (in radians), or a parameter expression string.</param>
+''' 
+''' <param name="Count">Can be an Integer or a parameter expression string.</param>
+''' 
+''' <param name="ParentFeatures">Can be one of the following: 
+''' a single object, 
+''' an object that implements IEnumerable(Of Object), 
+''' an ObjectCollection
+''' </param>
+'''
 Private Function AddCircularPatternFeature(
 	ParentFeatures As Object, 
 	AxisEntity As Object, 
 	NaturalAxisDirection As Boolean, 
 	Count As Object, 
-	Angle As Object, 
+	Angle As Object,
 	Optional FitWithinAngle As Boolean = True,
 	Optional Name As String = ""
 	) As CircularPatternFeature
