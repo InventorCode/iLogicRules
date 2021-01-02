@@ -15,6 +15,6 @@ End Sub
 ''' Source: <seealso href="https://github.com/InventorCode/iLogicRules"/>
 ''' </remarks>
 '''
-Function ExampleFunction() As Boolean
+Function ExampleSnippetFunction() As Boolean
   
 End Function
